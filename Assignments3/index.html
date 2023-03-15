@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p>Tìm giá trị trong Array = [-3, 5, 1, 3, 2, 10]</p>
+<button onclick="arrayCheck()">Bấm để bắt đầu</button>
+</body>
+</html>
+<script>
+
+    function arrayCheck() {
+        let checkNum = false;
+        let arr = [-3, 5, 1, 3, 2, 10];
+        let num = +prompt("Nhập số để tìm trong Array");
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === num) {
+                checkNum = true;
+            }
+        }
+        if (checkNum === true) {
+            alert(`Số đã nhập ${num} có trong Array ở vị trí ` + arr.indexOf(num));
+        } else {
+            alert("Số đã nhập không có trong Array");
+        }
+    }
+</script>
