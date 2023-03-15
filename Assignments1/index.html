@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <style>
+
+    body {
+      box-sizing: border-box;
+    }
+
+    input {
+      height: 30px;
+      padding: 0 0 0 10px;
+      width: 50%;
+    }
+
+    button {
+      height: 34px;
+      width: 100px;
+      margin: 0;
+    }
+
+  </style>
+</head>
+<body>
+<input type="text" id="inputData" placeholder="Nhập giá trị để thêm vào Array">
+<button onclick="addToArray()">Add</button>
+<button onclick="displayArr()">Display</button>
+<div id="output"></div>
+</body>
+</html>
+
+<script>
+  let arr = [];
+  function addToArray() {
+    let item = document.getElementById('inputData').value;
+    arr.push(item);
+  }
+
+  function displayArr() {
+    for (let i = 0; i < arr.length; i++) {
+      document.write("Element " + i + "= " + arr[i] + '<br>');
+      // document.getElementById('output').innerHTML += "Element " + i + "= " + arr[i] + '<br>';
+    }
+  }
+
+</script>
