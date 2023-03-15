@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Simple Tic Tac Toe Game</h1>
+    <div id="display" style="padding-left: 20px"></div>
+    <br />
+    <button onclick="changeData()">Change Value</button>
+  </body>
+</html>
+<script>
+  let arr = [
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+  ];
+
+  function boardDraw() {
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr.length; j++) {
+        document.getElementById("display").innerHTML += arr[i][j] + "&nbsp;";
+      }
+      document.getElementById("display").innerHTML += "<br>";
+    }
+  }
+
+  boardDraw();
+
+  function changeData() {
+    let numA = +prompt("Nhập số hàng muốn thay đổi (Hàng < 5): ");
+    let numB = +prompt("Nhập số cột muốn thay đổi (Cột < 5): ");
+    let icon = prompt("Nhập kí tự muốn đổi x/o");
+    if (
+      numA > 6 ||
+      numB > 6 ||
+      isNaN(numA) ||
+      isNaN(numB) ||
+      numA < 0 ||
+      numB < 0
+    ) {
+      alert("Nhập sai dữ liệu!");
+    }
+
+    arr[numA - 1][numB - 1] = icon;
+    document.getElementById("display").innerHTML = "";
+    boardDraw();
+  }
+</script>
