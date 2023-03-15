@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+
+        .inline {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<p> Đảo ngược Array = [-3, 5, 1, 3, 2, 10]</p>
+<button onclick="reverseArray()">Bấm để bắt đầu</button>
+<br>
+<p class="inline"> Array được đảo ngược là: </p>
+<div id="result" class="inline"></div>
+</body>
+</html>
+<script>
+    let arr = [-3, 5, 1, 3, 2, 10];
+
+    function reverseArray() {
+        for (let i = arr.length - 1; i >= 0; i--) {
+            // document.write(arr[i] + ", ");
+            document.getElementById('result').innerHTML += (arr[i] + ', ')
+        }
+    }
+</script>
